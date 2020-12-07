@@ -91,8 +91,8 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- intent: ask_symptoms
-  example: |
+- intent: ask_side_effects
+  examples: |
     - What is the [side effect](identifier) of [Paracetamol](medicine_name) ?
     - What [side effect](identifier) [Paracetamol](medicine_name) has ?
     - [side effect](identifier) of [Paracetamol](medicine_name) ?
