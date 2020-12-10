@@ -35,7 +35,35 @@ class ActionSideEffects(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="action is running!!")
+        dispatcher.utter_message(text="action side effect is running!!")
 
         return []
+
+class ActionSideEffects(Action):
+
+    def name(self) -> Text:
+        return "action_medicines"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="action medecine is running!!")
+
+        return []
+
+class ActionSideEffects(Action):
+
+    def name(self) -> Text:
+        return "action_symptoms"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="action symptoms is running!!")
+
+        return []
+
+
 

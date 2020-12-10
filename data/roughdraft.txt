@@ -104,14 +104,14 @@ nlu:
 
 - intent: ask_symptoms
   examples: |
-    - What is the symptom of [chicken pox](disease_name) ?
-    - What symptom [chicken pox](disease_name) has ?
-    - symptom of [chicken pox](disease_name) ?
-    - Any symptom] [chicken pox](disease_name) has ?
-    - Tell me symptom of [chicken pox](disease_name) ?
-    - Tell me about symptom of [chicken pox](disease_name) ?
-    - does [chicken pox](disease_name) have any symptom ?
-    - do you know symptom of [chicken pox](disease_name)?
+    - What is the [symptom](identifier) of [chicken pox](disease_name) ?
+    - What [symptom](identifier) [chicken pox](disease_name) has ?
+    - [symptom](identifier) of [chicken pox](disease_name) ?
+    - Any [symptom](identifier) [chicken pox](disease_name) has ?
+    - Tell me [symptom](identifier) of [chicken pox](disease_name) ?
+    - Tell me about [symptom](identifier) of [chicken pox](disease_name) ?
+    - does [chicken pox](disease_name) have any [symptom](identifier) ?
+    - do you know [symptom](identifier) of [chicken pox](disease_name)?
 
 - intent: ask_medicines
   examples: |
@@ -120,6 +120,63 @@ nlu:
     - I am having a [headache](symptom_name). Can you tell me some medicine for it?
     - [headache](symptom_name). Can you tell me some medicine for it?
     
+
+
+// stories.yml
+
+version: "2.0"
+
+stories:
+
+- story: side effect path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_side_effects
+  - action: utter_side_effects
+  - action: action_side_effects
+
+
+/// storiesss
+
+version: "2.0"
+
+stories:
+
+- story: common path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_side_effects
+  - action: action_side_effects
+  - intent: ask_symptoms
+  - action: action_symptoms
+  - intent: ask_medicines
+  - action: action_medicines
+
+- story: side effect path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_side_effects
+  - action: action_side_effects
+
+- story: symptoms path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_symptoms
+  - action: action_symptoms
+
+- story: medicine path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_medicines
+  - action: action_medicines
+
+
+
 
 
 

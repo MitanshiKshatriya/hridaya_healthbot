@@ -9,9 +9,13 @@ intents:
   - mood_unhappy
   - bot_challenge
   - ask_side_effects
+  - ask_symptoms
+  - ask_medicines
 
 actions: 
   - action_side_effects
+  - action_symptoms
+  - action_medicines
 
 slots: 
   medicine_name:
@@ -22,11 +26,19 @@ slots:
     type: text
   side_effects:
     type: text
+  disease_name:
+    type: text
+  symptom_name:
+    type: text
 
 entities:
   - medicine_name
   - identifier
   - yaha_mistake_tha
+  - name
+  - side_effects
+  - disease_name
+  - symptom_name
   
   
 
