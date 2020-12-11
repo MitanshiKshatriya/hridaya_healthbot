@@ -93,31 +93,35 @@ nlu:
 
 - intent: ask_side_effects
   examples: |
-    - What is the [side effect](identifier) of [Paracetamol](medicine_name) ?
-    - What [side effect](identifier) [Paracetamol](medicine_name) has ?
-    - [side effect](identifier) of [Paracetamol](medicine_name) ?
-    - Any [side effect](identifier) [Paracetamol](medicine_name) has ?
-    - Tell me [side effect](identifier) of [Paracetamol](medicine_name) ?
-    - Tell me about [side effect](identifier) of [Paracetamol](medicine_name) ?
-    - does [Paracetamol](medicine_name) have any [side effect](identifier) ?
-    - do you know [side effect](identifier) of [Paracetamol](medicine_name)?
+    - What is the side effect of [Paracetamol](medicine_name) ?
+    - What side effect [Paracetamol](medicine_name) has ?
+    - side effect of [Paracetamol](medicine_name) ?
+    - Any side effect [Paracetamol](medicine_name) has ?
+    - Tell me side effect of [Paracetamol](medicine_name) ?
+    - Tell me about side effect of [Paracetamol](medicine_name) ?
+    - does [Paracetamol](medicine_name) have any side effect ?
+    - do you know side effect of [Paracetamol](medicine_name)?
 
 - intent: ask_symptoms
   examples: |
-    - What is the symptom of [chicken pox](disease_name) ?
-    - What symptom [chicken pox](disease_name) has ?
-    - symptom of [chicken pox](disease_name) ?
-    - Any symptom] [chicken pox](disease_name) has ?
-    - Tell me symptom of [chicken pox](disease_name) ?
-    - Tell me about symptom of [chicken pox](disease_name) ?
-    - does [chicken pox](disease_name) have any symptom ?
-    - do you know symptom of [chicken pox](disease_name)?
+    - What is the symptom of [cancer](disease_name) ?
+    - What are the symptom of [cancer](disease_name) ?
+    - What symptom [cancer](disease_name) has ?
+    - symptom of [cancer](disease_name) ?
+    - Any symptom [cancer](disease_name) has ?
+    - Tell me symptom of [cancer](disease_name) ?
+    - Tell me about symptom of [cancer](disease_name) ?
+    - does [cancer](disease_name) have any symptom ?
+    - do you know symptom of [cancer](disease_name)?
 
 - intent: ask_medicines
   examples: |
     - I am having a [headache](symptom_name). What medicine should I use?
+    - I am having a [headache](symptom_name). What medicine should I take?
     - I am having a [headache](symptom_name). Do you know any medicines for it?
+    - I am having a [headache](symptom_name). Do you know what medecines I can take for it?
     - I am having a [headache](symptom_name). Can you tell me some medicine for it?
+    - I am having a [headache](symptom_name). Can you tell me any medicine for it?
     - [headache](symptom_name). Can you tell me some medicine for it?
     
 

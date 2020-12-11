@@ -35,7 +35,9 @@ class ActionSideEffects(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="action side effect is running!!")
+        medicine_name = tracker.get_slot('medicine_name')
+
+        dispatcher.utter_message(text="action side effect is running!! and medicine is: {}".format(medicine_name))
 
         return []
 

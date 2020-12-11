@@ -13,26 +13,46 @@ stories:
   - intent: ask_medicines
   - action: action_medicines
 
-- story: side effect path
+- story: side effect path greet
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_side_effects
   - action: action_side_effects
 
-- story: symptoms path
+- story: symptoms path greet
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_symptoms
   - action: action_symptoms
 
-- story: medicine path
+- story: medicine path greet
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_medicines
   - action: action_medicines
+
+- story: side effect path 
+  steps:
+  - intent: ask_side_effects
+  - action: action_side_effects
+
+- story: symptoms path 
+  steps:
+  - intent: ask_symptoms
+  - action: action_symptoms
+
+- story: medicine path 
+  steps:
+  - intent: ask_medicines
+  - action: action_medicines
+
+- story: bot challenge
+  steps: 
+  - intent: bot_challenge
+  - action: utter_iamabot
 
 
 
