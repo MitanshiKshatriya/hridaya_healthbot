@@ -1,4 +1,21 @@
 {
-    "coronavirus":"fever,sore throat, xyz",
-    "malaria": "fever, body pain"
-}
+    "coronavirus":"fever,sore throat, chest pain",
+    "malaria": "fever, body pain",
+    "influenza": "Fever,Aching muscles,Chills and sweats,Headache,Dry, persistent cough,Shortness of breath,Tiredness and weakness,Runny or stuffy nose,Sore throat,Eye pain,Vomiting and diarrhea, but this is more common in children than adults",
+"diarrhea": "Loose, watery stools,Abdominal cramps,Abdominal pain,Fever,Blood in the stool,Mucus in the stool,Bloating,Nausea,Urgent need to have a bowel movement"
+    ,
+    "diabetes":"Increased thirst,Frequent urination,Extreme hunger,Unexplained weight loss,Presence of ketones in the urine(ketones are a byproduct of the breakdown of muscle and fat that happens when there is not enough available insulin),Fatigue,Irritability,Blurred vision,Slow-healing sores,Frequent infections, such as gums or skin infections and vaginal infections",
+ "anxiety": "nervousness, restlessness, or being tense,feelings of danger, panic, or dread,rapid heart rate,rapid breathing, or hyperventilation,increased or heavy sweating,trembling or muscle twitching,weakness and lethargy,difficulty focusing or thinking clearly about anything other than the thing you�re worried about,insomnia,digestive or gastrointestinal problems, such as gas, constipation, or diarrhea,a strong desire to avoid the things that trigger your anxiety,obsessions about certain ideas, a sign of obsessive-compulsive disorder(OCD),performing certain behaviors over and over again"
+    ,
+  "hypohyroidism":"Fatigue,Increased sensitivity to cold,Constipation,Dry skin,Weight gain,Puffy face,Hoarseness,Muscle weakness,Elevated blood cholesterol level,Muscle aches, tenderness and stiffness,Pain, stiffness or swelling in your joints,Heavier than normal or irregular menstrual periods,Thinning hair,Slowed heart rate,Depression,Impaired memory,Enlarged thyroid gland(goiter)"
+    ,
+    "dermal fungal infections": "Irritation,Scaly skin,Redness,Itching,Swelling,Blisters"
+    ,
+     "acute Bronchitis": "Cough,Production of mucus(sputum), which can be clear, white, yellowish-gray or green in color � rarely, it may be streaked with blood,Fatigue,Shortness of breath,Slight fever and chills,Chest discomfort"
+    ,
+    "fibromyalgia": "Irritable bowel syndrome,Chronic fatigue syndrome,Migraine and other types of headaches,Interstitial cystitis or painful bladder syndrome,Temporomandibular joint disorders,Anxiety,Depression,Postural tachycardia syndrome"
+    ,
+    "allergic Rhinitis": "sneezing,a runny nose,a stuffy nose,an itchy nose,coughing,a sore or scratchy throat,itchy eyes,watery eyes,dark circles under the eyes,frequent headaches,eczema-type symptoms, such as having extremely dry, itchy skin that can blister and weep,hives,excessive fatigue"
+    ,
+    "urinary Tract Infections": "A strong, persistent urge to urinate,A burning sensation when urinating,Passing frequent, small amounts of urine,Urine that appears cloudy,Urine that appears red, bright pink or cola-colored � a sign of blood in the urine,Strong-smelling urine,Pelvic pain, in women � especially in the center of the pelvis and around the area of the pubic bone"
+    }

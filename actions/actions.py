@@ -16,6 +16,7 @@ import json
 import os
 dirname = os.path.dirname(__file__)
 sideeffects_filename = os.path.join(dirname, 'sideeffects.json')
+symptoms_filename = os.path.join(dirname, 'symptoms.json')
 #
 #
 # class ActionHelloWorld(Action):
@@ -39,21 +40,26 @@ class ActionSideEffects(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        
-        medicine_name = tracker.latest_message['entities'][0]['value']
-        print(medicine_name)
+        medicine_name = None
+        try:
+            medicine_name = tracker.latest_message['entities'][0]['value']
+            print(medicine_name)
+        except:
+            medicine_name = None
         # for e in entities:
         #     print(e)
         # with open(sideeffects_filename) as json_file: 
         #         data = json.load(json_file)
         # print(data[medicine_name])
-        try:
-            with open(sideeffects_filename) as json_file: 
-                data = json.load(json_file) 
-            dispatcher.utter_message(text="Side effects of the medicine "+medicine_name+" are "+data[medicine_name])
-        except:
-            dispatcher.utter_message(text="Sorry we could not find any side effects of "+medicine_name+" in our databse")
+        if medicine_name != None:
+            try:
+                with open(sideeffects_filename) as json_file: 
+                    data = json.load(json_file) 
+                dispatcher.utter_message(text="Side effects of the medicine "+medicine_name+" are "+data[medicine_name])
+            except:
+                dispatcher.utter_message(text="Sorry we could not find any side effects of "+medicine_name+" in our databse")
+        else:
+            dispatcher.utter_message(text="Sorry we could not recognize the medicine name")
 
         
             
@@ -70,7 +76,19 @@ class ActionMedicines(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="action medecine is running!!")
+        symptom_name = tracker.latest_message['entities'][0]['value']
+        print(symptom_name)
+
+        # try:
+        #     with open(sideeffects_filename) as json_file: 
+        #         data = json.load(json_file) 
+        #     dispatcher.utter_message(text="Symptoms of the disease "+disease_name+" are "+data[disease_name])
+        # except:
+        #     dispatcher.utter_message(text="Sorry we could not find any symptoms of "+disease_name+" in our databse")
+
+
+
+        dispatcher.utter_message(text="Here are some medicine for "+symptom_name+ " - crocin, naprocin, advil. However if the headache persist or is accompnied with fever or nausea I recommend seeing the nearest doctor")
 
         return []
 
@@ -82,8 +100,24 @@ class ActionSymptoms(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        disease_name = None
+        try:
+            disease_name = tracker.latest_message['entities'][0]['value']
+            print(disease_name)
+        except:
+            disease_name = None
 
-        dispatcher.utter_message(text="action symptoms is running!!")
+        if(disease_name!=None):
+            try:
+                with open(symptoms_filename) as json_file: 
+                    data = json.load(json_file) 
+                dispatcher.utter_message(text="Symptoms of the disease "+disease_name+" are "+data[disease_name])
+            except:
+                dispatcher.utter_message(text="Sorry we could not find any symptoms of "+disease_name+" in our databse")
+
+        else:
+            dispatcher.utter_message(text="Sorry we could not recognize the disease name")
 
         return []
 

@@ -15,7 +15,7 @@ rules:
 - rule: replying to help affirm 
   steps: 
   - intent: affirm
-  - action: utter_iamabot
+  - action: utter_happy
 
 - rule: replying to help deny
   steps: 

@@ -51,9 +51,9 @@ stories:
   - action: utter_greet
   - intent: ask_symptoms
     entities:
-      - disease_name: "paractamol"
+      - disease_name: "coronavirus"
   - slot_was_set:
-      - disease_name: "paracetamol"
+      - disease_name: "coronavirus"
   - action: action_symptoms
   - action: utter_did_that_help
   - intent: affirm
@@ -65,9 +65,9 @@ stories:
   - action: utter_greet
   - intent: ask_symptoms
     entities:
-      - disease_name: "paractamol"
+      - disease_name: "fever"
   - slot_was_set:
-      - disease_name: "paracetamol"
+      - disease_name: "fever"
   - action: action_symptoms
   - action: utter_did_that_help
   - intent: deny

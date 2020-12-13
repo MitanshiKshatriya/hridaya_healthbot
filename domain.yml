@@ -15,7 +15,9 @@ intents:
 - ask_symptoms:
     use_entities:
     - disease_name
-- ask_medicines
+- ask_medicines:
+    use_entities:
+    - symptom_name
 - activate_forms
 - side_effects
 - symptoms
