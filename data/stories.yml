@@ -17,7 +17,7 @@ stories:
 #   - intent: ask_medicines
 #   - action: action_medicines
 
-- story: side effect path greet
+- story: side effect path greet happy
   steps:
   - intent: greet
   - action: utter_greet
@@ -28,13 +28,50 @@ stories:
       - medicine_name: "paracetamol"
   - action: action_side_effects
   - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
 
-- story: symptoms path greet
+- story: side effect path greet sad
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_side_effects
+    entities:
+      - medicine_name: "paractamol"
+  - slot_was_set:
+      - medicine_name: "paracetamol"
+  - action: action_side_effects
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: symptoms path greet affirm
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_symptoms
+    entities:
+      - disease_name: "paractamol"
+  - slot_was_set:
+      - disease_name: "paracetamol"
   - action: action_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: symptoms path greet deny
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_symptoms
+    entities:
+      - disease_name: "paractamol"
+  - slot_was_set:
+      - disease_name: "paracetamol"
+  - action: action_symptoms
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
 
 - story: medicine path greet
   steps:
@@ -43,21 +80,56 @@ stories:
   - intent: ask_medicines
   - action: action_medicines
 
-- story: side effect path 
+- story: side effect path affirm
   steps:
   - intent: ask_side_effects
   - action: action_side_effects
   - action: utter_did_that_help
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
 
-- story: symptoms path 
+- story: side effect path deny
+  steps:
+  - intent: ask_side_effects
+  - action: action_side_effects
+  - action: utter_did_that_help
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: symptoms path affirm
   steps:
   - intent: ask_symptoms
   - action: action_symptoms
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
 
-- story: medicine path 
+- story: symptoms path deny
+  steps:
+  - intent: ask_symptoms
+  - action: action_symptoms
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: medicine path affirm
   steps:
   - intent: ask_medicines
   - action: action_medicines
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: medicine path deny
+  steps:
+  - intent: ask_medicines
+  - action: action_medicines
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
 
 - story: bot challenge
   steps: 

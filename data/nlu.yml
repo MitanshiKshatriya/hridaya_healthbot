@@ -94,25 +94,35 @@ nlu:
 - intent: ask_side_effects
   examples: |
     - What is the side effect of [paracetamol]{"entity":"medicine_name","value":"paracetamol"} ?
+    - What are the side effects of [paracetamol]{"entity":"medicine_name","value":"paracetamol"} ?
     - What side effect [metacin]{"entity":"medicine_name","value":"metacin"} has ?
     - side effect of [avonil]{"entity":"medicine_name","value":"avonil"} ?
+    - side effects of [avonil]{"entity":"medicine_name","value":"avonil"} ?
     - Any side effect [ondem tx]{"entity":"medicine_name","value":"ondem tx"} has ?
+    - Any side effects [ondem tx]{"entity":"medicine_name","value":"ondem tx"} has ?
     - Tell me side effect of [norflox tz]{"entity":"medicine_name","value":"norflox tz"} ?
+    - Tell me side effects of [norflox tz]{"entity":"medicine_name","value":"norflox tz"} ?
     - Tell me about side effect of [covaxin]{"entity":"medicine_name","value":"covaxin"} ?
     - does [allegra]{"entity":"medicine_name","value":"allegra"} have any side effect ?
     - do you know side effect of [crocin]{"entity":"medicine_name","value":"crocin"}?
+    - Can you tell me side effects of [norflox tz]{"entity":"medicine_name","value":"norflox tz"} ?
 
 - intent: ask_symptoms
   examples: |
-    - What is the symptom of [cancer](disease_name) ?
-    - What are the symptom of [cancer](disease_name) ?
-    - What symptom [cancer](disease_name) has ?
-    - symptom of [cancer](disease_name) ?
-    - Any symptom [cancer](disease_name) has ?
-    - Tell me symptom of [cancer](disease_name) ?
-    - Tell me about symptom of [cancer](disease_name) ?
-    - does [cancer](disease_name) have any symptom ?
-    - do you know symptom of [cancer](disease_name)?
+    - What is the symptom of [cancer]{"entity":"disease_name","value":"cancer"} ?
+    - What are the symptoms of [coronavirus]{"entity":"disease_name","value":"coronavirus"}?
+    - What symptom [malaria]{"entity":"disease_name","value":"malaria"} has ?
+    - What symptoms [tuberclosis]{"entity":"disease_name","value":"tuberclosis"} has ?
+    - symptom of [pcos]{"entity":"disease_name","value":"pcos"} ?
+    - symptoms of [asthama]{"entity":"disease_name","value":"asthama"} ?
+    - Any symptom [cancer]{"entity":"disease_name","value":"cancer"} has ?
+    - Tell me symptom of [cancer]{"entity":"disease_name","value":"cancer"} ?
+    - Tell me symptoms of [cancer]{"entity":"disease_name","value":"cancer"} ?
+    - Tell me about symptom of [cancer]{"entity":"disease_name","value":"cancer"} ?
+    - does [cancer]{"entity":"disease_name","value":"cancer"} have any symptom ?
+    - do you know symptom of [cancer]{"entity":"disease_name","value":"cancer"}?
+    - Can you tell me symptoms of [cancer]{"entity":"disease_name","value":"cancer"} ?
+    - Can you tell me about symptoms of [cancer]{"entity":"disease_name","value":"cancer"} ?
 
 - intent: ask_medicines
   examples: |
@@ -138,6 +148,26 @@ nlu:
     - covaxin
     - bismuth subsalicylate
     - loperamide
+
+- lookup: disease_name
+  examples: |
+    - coronavirus
+    - malaria
+    - cancer
+    - piles
+
+- lookup: symptom_name
+  examples: |
+    - fever
+    - headache
+    - toothache
+    - body pain
+    - menstural cramps
+    - constipation
+    - loose motion
+    - nausea
+    - vomitting
+
 
 # - intent: activate_forms
 #   examples: |
