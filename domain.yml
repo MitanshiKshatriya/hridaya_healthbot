@@ -1,70 +1,95 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - ask_side_effects
-  - ask_symptoms
-  - ask_medicines
-
-actions: 
-  - action_side_effects
-  - action_symptoms
-  - action_medicines
-
-slots: 
-  medicine_name:
-    type: text
-  identifier:
-   type: text
-  name:
-    type: text
-  side_effects:
-    type: text
-  disease_name:
-    type: text
-  symptom_name:
-    type: text
-
-entities:
-  - medicine_name
-  - identifier
-  - yaha_mistake_tha
-  - name
-  - side_effects
-  - disease_name
-  - symptom_name
-  
-  
-
-responses:
-  utter_greet:
-  - text: "Hi! I am a health bot. You can ask me general health query like symptoms of a disease and side effects of a medicine"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-  utter_side_effects:
-  - text: "Here is your medicine name: {medicine_name}"
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- ask_side_effects:
+    use_entities:
+    - medicine_name
+- ask_symptoms:
+    use_entities:
+    - disease_name
+- ask_medicines
+- activate_forms
+- side_effects
+- symptoms
+- medicine_recommend
+entities:
+- medicine_name
+- identifier
+- yaha_mistake_tha
+- name
+- side_effects
+- disease_name
+- symptom_name
+slots:
+  medicine_name:
+    type: text
+    influence_conversation: true
+  identifier:
+    type: text
+    influence_conversation: true
+  name:
+    type: text
+    influence_conversation: true
+  side_effects:
+    type: text
+    influence_conversation: true
+  disease_name:
+    type: text
+    influence_conversation: true
+  symptom_name:
+    type: text
+    influence_conversation: true
+  requested_Slot:
+    type: unfeaturized
+    influence_conversation: false
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hi! I am a health bot. You can ask me general health query like symptoms
+      of a disease and side effects of a medicine
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - buttons:
+    - payload: /affirm
+      title: Yes. loved it.
+    - payload: /affirm
+      title: It was okay
+    - payload: /deny
+      title: not satisfied
+    text: Was that helpful?
+  utter_happy:
+  - text: Great, I hope to answer more of your queries.
+  utter_goodbye:
+  - text: I look forward to improving my conversational skills and understanding humans
+      better!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_side_effects:
+  - text: Name the medicine whose side effect you will like to know
+  utter_options:
+  - buttons:
+    - payload: /side_effects
+      title: side effect of medecines
+    - payload: /symptoms
+      title: symptoms of disease
+    - payload: /medicine_recommend
+      title: medicine recommendation
+    text: What can I help you with ?
+  utter_ask_medicine_name:
+  - text: Name the medicine whose side effect you will like to know
+actions:
+- action_side_effects
+- action_symptoms
+- action_medicines

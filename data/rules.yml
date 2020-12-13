@@ -11,3 +11,34 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: replying to help affirm 
+  steps: 
+  - intent: affirm
+  - action: utter_iamabot
+
+- rule: replying to help deny
+  steps: 
+  - intent: deny
+  - action: utter_goodbye
+
+# - rule: Activate side effect form
+#   steps:
+#   # - intent: activate_forms
+#   # - action: utter_options
+#   - intent: side_effects
+#   - action: user_side_effect_form
+#   - active_loop: user_side_effect_form
+
+# - rule: Submit side effect form
+#   condition:
+#   - active_loop: user_side_effect_form
+#   steps:
+#   - action: user_side_effect_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_submit_side_effect
+
+
+

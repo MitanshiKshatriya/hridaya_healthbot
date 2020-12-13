@@ -93,14 +93,14 @@ nlu:
 
 - intent: ask_side_effects
   examples: |
-    - What is the side effect of [Paracetamol](medicine_name) ?
-    - What side effect [Paracetamol](medicine_name) has ?
-    - side effect of [Paracetamol](medicine_name) ?
-    - Any side effect [Paracetamol](medicine_name) has ?
-    - Tell me side effect of [Paracetamol](medicine_name) ?
-    - Tell me about side effect of [Paracetamol](medicine_name) ?
-    - does [Paracetamol](medicine_name) have any side effect ?
-    - do you know side effect of [Paracetamol](medicine_name)?
+    - What is the side effect of [paracetamol]{"entity":"medicine_name","value":"paracetamol"} ?
+    - What side effect [metacin]{"entity":"medicine_name","value":"metacin"} has ?
+    - side effect of [avonil]{"entity":"medicine_name","value":"avonil"} ?
+    - Any side effect [ondem tx]{"entity":"medicine_name","value":"ondem tx"} has ?
+    - Tell me side effect of [norflox tz]{"entity":"medicine_name","value":"norflox tz"} ?
+    - Tell me about side effect of [covaxin]{"entity":"medicine_name","value":"covaxin"} ?
+    - does [allegra]{"entity":"medicine_name","value":"allegra"} have any side effect ?
+    - do you know side effect of [crocin]{"entity":"medicine_name","value":"crocin"}?
 
 - intent: ask_symptoms
   examples: |
@@ -123,6 +123,42 @@ nlu:
     - I am having a [headache](symptom_name). Can you tell me some medicine for it?
     - I am having a [headache](symptom_name). Can you tell me any medicine for it?
     - [headache](symptom_name). Can you tell me some medicine for it?
+
+- lookup: medecine_name
+  examples: |
+    - paracetamol
+    - crocin
+    - avonil
+    - ondem
+    - norflox tz
+    - diane 365
+    - metacin
+    - allegra
+    - grillinctus
+    - covaxin
+    - bismuth subsalicylate
+    - loperamide
+
+# - intent: activate_forms
+#   examples: |
+#     - healthbot
+#     - health bot
+
+# - intent: side_effects
+#   examples: |
+#     - side effect
+#     - sideeffects
+#     - side effects
+
+# - intent: symptoms
+#   examples: |
+#     - symptoms
+#     - symptom
+
+# - intent: medicine_recommend
+#   examples: |
+#     - medicine recommend
+#     - medicine recommendation
     
 
 

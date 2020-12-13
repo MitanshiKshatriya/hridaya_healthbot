@@ -2,23 +2,32 @@ version: "2.0"
 
 stories:
 
-- story: common path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_side_effects
-  - action: action_side_effects
-  - intent: ask_symptoms
-  - action: action_symptoms
-  - intent: ask_medicines
-  - action: action_medicines
+# - story: common path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: ask_side_effects
+#     entities:
+#     - medicine_name: "paractamol"
+#   - slot_was_set:
+#       - medicine_name: "paracetamol"
+#   - action: action_side_effects
+#   - intent: ask_symptoms
+#   - action: action_symptoms
+#   - intent: ask_medicines
+#   - action: action_medicines
 
 - story: side effect path greet
   steps:
   - intent: greet
   - action: utter_greet
   - intent: ask_side_effects
+    entities:
+      - medicine_name: "paractamol"
+  - slot_was_set:
+      - medicine_name: "paracetamol"
   - action: action_side_effects
+  - action: utter_did_that_help
 
 - story: symptoms path greet
   steps:
@@ -38,6 +47,7 @@ stories:
   steps:
   - intent: ask_side_effects
   - action: action_side_effects
+  - action: utter_did_that_help
 
 - story: symptoms path 
   steps:
@@ -53,6 +63,14 @@ stories:
   steps: 
   - intent: bot_challenge
   - action: utter_iamabot
+
+# commenting it out for adding forms
+# - story: health bot fnal
+#   steps:
+#   - intent: activate_forms
+#   - action: utter_options
+#   - intent: side_effects
+#   - action: utter_side_effects
 
 
 
